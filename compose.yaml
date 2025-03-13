@@ -1,0 +1,6 @@
+﻿services:
+  jesforge.dev:
+    image: jesforge.dev
+    build:
+      context: .
+      dockerfile: Jesforge.dev/Dockerfile

@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jesforge.dev", "Jesforge.dev\Jesforge.dev.csproj", "{D6D454D5-349F-4482-8450-D6AFF9691850}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4E17E71C-2466-42BA-B4F1-1DD00DA7537D}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6D454D5-349F-4482-8450-D6AFF9691850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6D454D5-349F-4482-8450-D6AFF9691850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6D454D5-349F-4482-8450-D6AFF9691850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6D454D5-349F-4482-8450-D6AFF9691850}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
