@@ -3,7 +3,7 @@ name: Deploy Blazor Server App
 on:
   push:
     branches:
-      - main  # Passe dies an, wenn dein Hauptbranch anders heißt
+      - master  # Passe dies an, wenn dein Hauptbranch anders heißt
   workflow_dispatch: # Ermöglicht manuelles Triggern
 
 permissions:
