@@ -1,0 +1,35 @@
+name: Deploy Blazor WebAssembly to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # Passe den Branch-Namen an, falls nötig
+  workflow_dispatch: # Ermöglicht manuelles Auslösen
+
+permissions:
+  contents: write
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x' # Passe die .NET-Version an
+
+      - name: Publish Blazor WASM
+        run: dotnet publish -c Release -o release --nologo
+
+      - name: Prepare for GitHub Pages
+        run: cp release/wwwroot/index.html release/wwwroot/404.html
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: release/wwwroot
