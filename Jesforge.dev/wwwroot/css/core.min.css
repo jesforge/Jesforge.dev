@@ -848,6 +848,10 @@ select{
   margin-right: 10rem;
 }
 
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+
 .inline{
   display: inline;
 }
@@ -887,6 +891,14 @@ select{
   height: 1rem;
 }
 
+.h-14{
+  height: 3.5rem;
+}
+
+.h-10{
+  height: 2.5rem;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -901,6 +913,14 @@ select{
 
 .w-4{
   width: 1rem;
+}
+
+.w-14{
+  width: 3.5rem;
+}
+
+.w-10{
+  width: 2.5rem;
 }
 
 .max-w-3xl{
@@ -944,6 +964,14 @@ select{
   gap: 1.5rem;
 }
 
+.gap-3{
+  gap: 0.75rem;
+}
+
+.gap-4{
+  gap: 1rem;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -962,12 +990,28 @@ select{
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
+.space-y-16 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(4rem * var(--tw-space-y-reverse));
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
 .rounded-lg{
   border-radius: 0.5rem;
 }
 
 .rounded-full{
   border-radius: 9999px;
+}
+
+.rounded-2xl{
+  border-radius: 1rem;
 }
 
 .border-l-4{
@@ -1012,6 +1056,26 @@ select{
   background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#36393e\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(54 57 62 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#424549\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(66 69 73 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#95A5A6\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(149 165 166 / var(--tw-bg-opacity, 1));
+}
+
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .p-6{
   padding: 1.5rem;
 }
@@ -1026,6 +1090,10 @@ select{
 
 .p-40{
   padding: 10rem;
+}
+
+.p-3{
+  padding: 0.75rem;
 }
 
 .px-4{
@@ -1228,5 +1296,9 @@ select{
 
   .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

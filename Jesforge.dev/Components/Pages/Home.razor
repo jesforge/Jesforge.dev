@@ -1,6 +1,7 @@
 ﻿@page "/about"
 @page "/"
 
+@using Jesforge.dev.Models
 @using Microsoft.AspNetCore.Components
 
 <main class="min-h-screen bg-[#121212] text-white">
@@ -15,9 +16,13 @@
                 Jesforge</a>
         </h1>
         <nav class="flex space-x-4 text-lg font-bold">
-            <a href="#projects" class="px-4 py-2 text-gray-300 hover:text-white flex items-center space-x-2">
-                <i class="icon-package mr-4"></i>
-                <span>Projects</span>
+            <a href="#about" class="px-4 py-2 text-gray-300 hover:text-white flex items-center space-x-2">
+                <i class="icon-info mr-4"></i>
+                <span>About</span>
+            </a>
+            <a href="#timeline" class="px-4 py-2 text-gray-300 hover:text-white flex items-center space-x-2">
+                <i class="icon-timer mr-4"></i>
+                <span>Timeline</span>
             </a>
             <a href="#skills" class="px-4 py-2 text-gray-300 hover:text-white flex items-center space-x-2">
                 <i class="icon-quote mr-4"></i>
@@ -37,7 +42,7 @@
             software that is easy to use and maintain.</p>
     </section>
 
-    <section id="projects" class="py-16 px-6">
+    <section id="about" class="py-16 px-6">
         <div class="text-center py-20">
             <h1 class="text-4xl font-bold">About me</h1>
         </div>
@@ -50,7 +55,7 @@
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
                      alt="HTML5" width="20" height="20" class="inline-flex mx-1"/>,
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="CSS3"
-                     width="20" height="20" class="inline-flex mx-1"/>.  Over the years, I have used
+                     width="20" height="20" class="inline-flex mx-1"/>. Over the years, I have used
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
                      width="20" height="20" class="inline-flex mx-1"/>,
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"
@@ -58,7 +63,7 @@
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
                      alt="Tailwind CSS" width="20" height="20" class="inline-flex mx-1"/>.
             </p>
-            
+
             <p>
                 Additionally, I work with
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"
@@ -111,7 +116,10 @@
 
     <hr class="my-8 border-t-2 border-gray-400 ml-20 mr-20">
 
-    <div class="flex flex-col items-center py-12">
+    <div id="timeline" class="flex flex-col items-center py-12">
+        <div class="text-center py-20">
+            <h1 class="text-4xl font-bold">Timeline</h1>
+        </div>
         <div class="w-full max-w-3xl">
             <div class="border-l-4 border-blue-500 pl-4">
                 @foreach (var (eventItem, index) in timeLine.Select((value, i) => (value, i)))
@@ -132,31 +140,29 @@
         </div>
     </div>
 
-    <section id="skills" class="py-16 px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">Programmiersprachen</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            @foreach (var language in Languages)
-            {
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center">
-                    <img src="@language.Url" alt="@language.Name" class="h-12 w-12 mr-4">
-                    <span class="text-lg font-semibold">@language.Name</span>
+    <div class="space-y-16 px-6 py-16">
+        @foreach (var sec in new[] { ("skills", "Programmiersprachen", Languages), ("languages", "TechStack", TechStack) })
+        {
+            <section id="@sec.Item1" class="text-center">
+                <br/>
+                <h2 class="text-3xl font-bold mb-8">@sec.Item2</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    @foreach (var item in sec.Item3 ?? Enumerable.Empty<Tech>())
+                    {
+                        <div class="p-3 flex items-center justify-center">
+                            <img src="@item.Url" alt="@item.Name" class="h-12 w-12">
+                            <span class="text-lg font-semibold ml-1">@item.Name</span>
+                        </div>
+                    }
                 </div>
-            }
-        </div>
-    </section>
-    <section id="languages" class="py-16 px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">TechStack</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            @foreach (var tech in TechStack)
-            {
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center">
-                    <img src="@tech.Url" alt="@tech.Name" class="h-12 w-12 mr-4">
-                    <span class="text-lg font-semibold">@tech.Name</span>
-                </div>
-            }
-        </div>
-    </section>
-    <section id="contact" class="py-16 bg-gray-800 text-center">
+            </section>
+            <br/>
+        }
+
+    </div>
+
+
+    <section id="contact" class="py-16  text-center shadow-lg">
         <h2 class="text-3xl font-bold"><i class="icon-mail inline-flex justify-center items-center"></i> Contact</h2>
         <p class="text-gray-200 mt-2">Contact me with <a href="mailto:me@jesforge.dev" class="text-blue-200">me@jesforge.dev</a>
         </p>
