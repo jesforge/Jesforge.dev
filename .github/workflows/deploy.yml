@@ -1,61 +1,52 @@
-name: Deploy Blazor Server App
+#
+#  Copyright (c) https://github.com/gOOvER/own-pterodactyl-images/blob/main/LICENSE
+#
+
+name: Web Builder
 
 on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"
   push:
     branches:
-      - master  # Passe dies an, wenn dein Hauptbranch anders heißt
-  workflow_dispatch: # Ermöglicht manuelles Triggern
-
-permissions:
-  contents: read
-
+      - main
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 jobs:
-  build:
+  push:
+    name: "Build and push image"
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x' # Passe die Version an
+      - uses: docker/setup-qemu-action@v3
 
-      - name: Publish Blazor Server
-        run: dotnet publish -c Release -o release --nologo
+      - name: install libs
+        # pkg-config
+        run: sudo apt-get update -y && sudo add-apt-repository ppa:deadsnakes/ppa -y && sudo apt update && sudo apt install python3.12 -y && sudo apt install pkgconf build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev -y && python3 --version
+      - uses: docker/setup-buildx-action@v3
+        with:
+          buildkitd-flags: --debug
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - uses: docker/login-action@v3
         with:
-          name: blazor-server-build
-          path: release
-          
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: blazor-server-build
-          path: release
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Beispiel für Deployment auf einen Linux-Server per SSH
-      - name: Deploy to Server via SSH
-        uses: appleboy/scp-action@v0.1.7
+      - uses: docker/build-push-action@v5
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          source: "release/*"
-          target: "/var/www/blazor-app"
-
-      - name: Restart Service on Server
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            sudo systemctl restart blazor-app
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ghcr.io/jesforge/jesforge-dev:${{ github.run_number }}
+            ghcr.io/jesforge/jesforge-dev:latest
