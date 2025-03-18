@@ -3,43 +3,66 @@
 
 @using Microsoft.AspNetCore.Components
 
-<h1 class="mb-8 text-2xl font-medium tracking-tight">
-    Hey and welcome friend! 👋
-</h1>
-<div class="prose prose-neutral dark:prose-invert">
-    <p>
-        I'm Jesper, a Full Stack Developer from Germany. I'm passionate about
-        building software that is easy to use and maintain.
-    </p>
-    
-    <div class="flex flex-wrap justify-center items-center rounded-lg space-x-4 border-t border-b border-gray-400 dark:border-gray-600 py-4 my-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-500 dark:to-gray-600"
-        style="background-image: url('img/caro.png'); background-size: cover; background-position: center;">
-        <div class="flex flex-col items-center">
-            <div class="flex items-center justify-center">
-                <ul class="flex flex-wrap justify-center items-center space-x-4">
-                    @foreach (var tech in TechStack)
-                    {
-                        <li class="flex items-center justify-center">
-                            <img src="@tech.Url" alt="@tech.Name" width="40" height="40" />
-                        </li>
-                    }
-                </ul>
+<main class="min-h-screen bg-gray-900 text-white">
+    <header class="w-full py-6 px-4 flex justify-between items-center bg-gray-800 shadow-lg">
+        <h1 class="text-2xl font-bold">Mein Portfolio</h1>
+        <nav>
+            <a href="#projects" class="px-4 text-gray-300 hover:text-white">Projekte</a>
+            <a href="#contact" class="px-4 text-gray-300 hover:text-white">Kontakt</a>
+        </nav>
+    </header>
+
+    <section class="text-center py-20">
+        <h2 class="text-4xl font-bold">Hallo, ich bin Jesper!</h2>
+        <p class="text-gray-400 mt-4">Ich entwickle moderne und effiziente Softwarelösungen.</p>
+    </section>
+
+    <section id="projects" class="py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Projekte</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">Projekt 1</h3>
+                <p class="text-gray-400">Beschreibung des Projekts.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">Projekt 2</h3>
+                <p class="text-gray-400">Beschreibung des Projekts.</p>
             </div>
         </div>
-    </div>
-    
-    <div>
-        <h1>About me</h1>
-        <p>
-            Welcome to my life. I work in my free time on various projects. I
-            started in 2022 with <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" />
-            and web development in <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" width="40" height="40" />,
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" width="40" height="40" />.
+    </section>
+    <section id="languages" class="py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Programmiersprachen</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            @foreach (var language in Languages)
+            {
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center">
+                    <img src="@language.Url" alt="@language.Name" class="h-12 w-12 mr-4">
+                    <span class="text-lg font-semibold">@language.Name</span>
+                </div>
+            }
+        </div>
+    </section>
+    <section id="languages" class="py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">TechStack</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            @foreach (var tech in TechStack)
+            {
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center">
+                    <img src="@tech.Url" alt="@tech.Name" class="h-12 w-12 mr-4">
+                    <span class="text-lg font-semibold">@tech.Name</span>
+                </div>
+            }
+        </div>
+    </section>
+    <section id="contact" class="py-16 bg-gray-800 text-center">
+        <h2 class="text-3xl font-bold"><i class="icon-mail"></i> Contact</h2>
+        <p class="text-gray-400 mt-2">Contact me with <a href="mailto:me@jesforge.dev" class="text-blue-400">me@jesforge.dev</a>
         </p>
-    </div>
-</div>
+    </section>
+</main>
 
 @code {
+
     private List<Tech> TechStack = new()
     {
         new Tech("React", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"),
@@ -55,22 +78,19 @@
         new Tech("MongoDB", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"),
         new Tech("Kotlin", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg"),
         new Tech("JavaScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"),
-        new Tech("TypeScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"),
-        new Tech("CSS3", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"),
-        new Tech("HTML5", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"),
-        new Tech("Git", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"),
-        new Tech("GitHub", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"),
-        new Tech("NPM", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"),
-        new Tech("MySQL", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"),
+        new Tech("TypeScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript-typescript-original.svg"),
+    };
+
+    private List<Tech> Languages = new()
+    {
         new Tech("Java", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"),
         new Tech("C#", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"),
-        new Tech("Docker", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"),
+        new Tech("Python", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"),
+        new Tech("JavaScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"),
+        new Tech("TypeScript", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"),
         new Tech("PHP", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"),
-        new Tech("Laravel", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"),
-        new Tech("Discord.js", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/discordjs/discordjs-original.svg"),
-        new Tech("Portainer", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/portainer/portainer-original.svg"),
-        new Tech("TailwindCSS", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg")
     };
-    
+
     private record Tech(string Name, string Url);
+
 }

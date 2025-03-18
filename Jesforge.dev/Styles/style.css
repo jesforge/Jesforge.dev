@@ -1,7 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-
 @import "tailwindcss/utilities";
+@import url("https://cdn.jsdelivr.net/npm/lucide-static@0.460.0/font/lucide.css");
 
 #blazor-error-ui {
     display: none;
