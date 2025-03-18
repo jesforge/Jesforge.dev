@@ -4,13 +4,7 @@ module.exports = {
         '../**/*.razor',
         'mappings/*.map'
     ],
-    theme: {
-        extend: {
-            animation: {
-                'shimmer': 'shimmer 2s linear infinite',
-            }
-        },
-    },
+    theme: {},
     plugins: [
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography')
