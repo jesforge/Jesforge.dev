@@ -4,27 +4,27 @@
 @using Microsoft.AspNetCore.Components
 
 <main class="min-h-screen bg-[#121212] text-white">
-    <header class="w-full py-6 px-4 flex justify-between items-center bg-gray-800 shadow-lg">
-        <h1 class="text-2xl font-bold mb-9">
-            <img
-                src="img/jesforge.png"
-                class="inline-flex"
-                width="70"
-                height="70"
-            />
-            Jesforge
+    <header class="w-full py-6 px-4 flex justify-between items-center shadow-lg">
+        <h1 class="text-2xl font-bold ring-0 outline-none">
+            <a href="/">
+                <img
+                    src="img/jesforge.png"
+                    class="inline-flex"
+                    width="70"
+                    height="70"/>
+                Jesforge</a>
         </h1>
-        <nav class="flex space-x-4">
+        <nav class="flex space-x-4 text-lg font-bold">
             <a href="#projects" class="px-4 py-2 text-gray-300 hover:text-white flex items-center space-x-2">
-                <i class="icon-package" style="margin-right: 4px;"></i>
+                <i class="icon-package mr-4"></i>
                 <span>Projects</span>
             </a>
             <a href="#skills" class="px-4 py-2 text-gray-300 hover:text-white flex items-center space-x-2">
-                <i class="icon-quote" style="margin-right: 4px;"></i>
+                <i class="icon-quote mr-4"></i>
                 <span>Skills</span>
             </a>
             <a href="#contact" class="px-4 py-2 text-gray-300 hover:text-white flex items-center space-x-2">
-                <i class="icon-mail" style="margin-right: 4px;"></i>
+                <i class="icon-mail mr-4"></i>
                 <span>Contact</span>
             </a>
         </nav>
@@ -32,23 +32,106 @@
     </header>
 
     <section class="text-center py-20">
-        <h2 class="text-4xl font-bold">Hallo, ich bin Jesper!</h2>
-        <p class="text-white mt-4">Ich entwickle moderne und effiziente Softwarelösungen.</p>
+        <h2 class="text-4xl font-bold">Hey and welcome friend! 👋</h2>
+        <p class="text-white mt-4">I'm Jesper a Full Stack Developer from Germany. I'm passionate about building
+            software that is easy to use and maintain.</p>
     </section>
 
     <section id="projects" class="py-16 px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">Projekte</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold">Projekt 1</h3>
-                <p class="text-gray-400">Beschreibung des Projekts.</p>
-            </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold">Projekt 2</h3>
-                <p class="text-gray-400">Beschreibung des Projekts.</p>
-            </div>
+        <div class="text-center py-20">
+            <h1 class="text-4xl font-bold">About me</h1>
+        </div>
+        <div class="max-w-3xl mx-auto">
+            <p>
+                Welcome to my life. I work on various projects in my free time. I started in 2022 with
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                     alt="JavaScript" width="20" height="20" class="inline-flex mx-1"/>
+                and web development using
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
+                     alt="HTML5" width="20" height="20" class="inline-flex mx-1"/>,
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="CSS3"
+                     width="20" height="20" class="inline-flex mx-1"/>.  Over the years, I have used
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
+                     width="20" height="20" class="inline-flex mx-1"/>,
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"
+                     width="20" height="20" class="inline-flex mx-1"/>,
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                     alt="Tailwind CSS" width="20" height="20" class="inline-flex mx-1"/>.
+            </p>
+            
+            <p>
+                Additionally, I work with
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"
+                     width="20" height="20" class="inline-flex mx-1"/>,
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                     alt="TypeScript" width="20" height="20" class="inline-flex mx-1"/>,
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"
+                     width="20" height="20" class="inline-flex mx-1"/>,
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+                     width="20" height="20" class="inline-flex mx-1"/>.
+            </p>
+
+            <p>
+                I am learning
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" alt="Rust"
+                     width="20" height="20" class="inline-flex mx-1"/>
+                and <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" alt="Go"
+                         width="20" height="20" class="inline-flex mx-1"/>.
+                I am also interested in
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"
+                     width="20" height="20" class="inline-flex mx-1"/>,
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+                     alt="Kubernetes" width="20" height="20" class="inline-flex mx-1"/>,
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/portainer/portainer-original.svg"
+                     alt="Portainer" width="20" height="20" class="inline-flex mx-1"/>. I stream on <a
+                    href="https://twitch.tv/jesforge" class="text-blue-500" target="_blank">Twitch</a> and
+                <a href="https://youtube.com/channel/UCUmqNgRczdECn4KCOku36Gw" class="text-red-500" target="_blank">YouTube</a>
+                about programming and technology. Currently, I am training as an IT assistant and later as an IT
+                specialist
+                for application development.
+            </p>
+
+            <hr class="my-8 border-t-2 border-gray-400 ml-40 mr-40">
+
+            <p class="mt-4">
+                I work on projects like
+                <img src="https://cdn.discordapp.com/emojis/1290310710429224994.webp" alt="Nexocrew" width="20"
+                     height="20" class="inline-flex mx-1"/> Nexocrew,
+                <img src="https://cdn.discordapp.com/emojis/681682145823293447.webp" alt="Techscode" width="20"
+                     height="20" class="inline-flex mx-1"/> Techscode,
+                <img src="https://cdn.discordapp.com/emojis/1297575744578392074.webp" alt="Moonlight" width="20"
+                     height="20" class="inline-flex mx-1"/> Moonlight,
+                <img src="https://cdn.discordapp.com/emojis/1246767064320970762.webp" alt="DisBot" width="20"
+                     height="20" class="inline-flex mx-1"/> DisBot,
+                <img src="https://www.crystopia.net/_next/image?url=%2Fimages%2Fcrystopia.png&w=828&q=75"
+                     alt="Crystopia" width="20" height="20" class="inline-flex mx-1"/> Crystopia.
+            </p>
         </div>
     </section>
+
+    <hr class="my-8 border-t-2 border-gray-400 ml-20 mr-20">
+
+    <div class="flex flex-col items-center py-12">
+        <div class="w-full max-w-3xl">
+            <div class="border-l-4 border-blue-500 pl-4">
+                @foreach (var (eventItem, index) in timeLine.Select((value, i) => (value, i)))
+                {
+                    <div class="relative mb-8 pl-8 @(index % 2 == 0 ? "text-right" : "text-left")">
+                        <div
+                            class="absolute w-4 h-4 bg-blue-500 rounded-full left-[-10px] top-1/2 transform -translate-y-1/2"></div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-xl font-semibold">@eventItem.Date.ToString("MMM dd, yyyy")</span>
+                            <div class="space-y-1">
+                                <h3 class="text-lg font-bold">@eventItem.Title</h3>
+                                <p class="text-sm text-gray-600">@eventItem.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
     <section id="skills" class="py-16 px-6">
         <h2 class="text-3xl font-bold text-center mb-8">Programmiersprachen</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -75,12 +158,30 @@
     </section>
     <section id="contact" class="py-16 bg-gray-800 text-center">
         <h2 class="text-3xl font-bold"><i class="icon-mail inline-flex justify-center items-center"></i> Contact</h2>
-        <p class="text-gray-400 mt-2">Contact me with <a href="mailto:me@jesforge.dev" class="text-blue-400">me@jesforge.dev</a>
+        <p class="text-gray-200 mt-2">Contact me with <a href="mailto:me@jesforge.dev" class="text-blue-200">me@jesforge.dev</a>
         </p>
     </section>
 </main>
 
 @code {
+
+    public class TimelineEvent
+    {
+        public DateTime Date { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+    }
+
+    private List<TimelineEvent> timeLine = new()
+    {
+        new TimelineEvent { Date = new DateTime(2024, 8, 31), Title = "Training as an IT assistant", Description = "I started my first training as an IT assistant at 'BS-Husum'." },
+        new TimelineEvent { Date = new DateTime(2024, 6, 24), Title = "MSA - Conclusion", Description = "MSA - 'Mittlerer Schulabschluss' successful completed." },
+        new TimelineEvent { Date = new DateTime(2023, 11, 10), Title = "Start a Minecraft Server", Description = "I started a unique and innovative Minecraft Server - 'Crystopia'." },
+        new TimelineEvent { Date = new DateTime(2023, 8, 30), Title = "ICDL Base Force", Description = "ECDL Base Force successful completed. (https://www.icdl.de/)" },
+        new TimelineEvent { Date = new DateTime(2024, 1, 12), Title = "DisBot Development", Description = "I started the development of my first Discord Bot - 'DisBot'." },
+        new TimelineEvent { Date = new DateTime(2022, 5, 15), Title = "Start with Development", Description = "I started with development and learned the basics of my current skills." },
+        new TimelineEvent { Date = new DateTime(2021, 11, 1), Title = "Start my first Project", Description = "I started my first project with a friend. - 'Nexocrew' formerly tnsstudio." }
+    };
 
     private List<Tech> TechStack = new()
     {
